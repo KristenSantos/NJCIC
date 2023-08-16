@@ -3,22 +3,36 @@
 <head>
     <title>A simple HTML document</title>
     <link rel="stylesheet" type="text/css" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
 
 
-    
+    <main>
+    <h3 id="searchTitle">Seach Your Local Representatives</h3>
     <form id="form">
         <input type="text" id="addressInput" placeholder="Enter address">
         <button id="searchButton">Search</button>
     </form>
-    <button class="btn" id="btn">
-        Dropdown
-        <i class="bx bx-chevron-down" id="arrow"></i>
-      </button>
+
+        <div class="dropdown_list">
+            <button class="dropdown_button"
+                onclick="show_list()">
+                Select a Campaign
+            </button>
+ 
+            <div id="courses_id" class="courses">
+                <li><a href="">Health Care</a></li>
+                <li><a href="">Immigration</a></li>
+
+            </div>
+        </div>
+    </main>
       
     <div id="results">
-        <!-- API data will be displayed here -->
+        
     </div>
     
     <script src="index.js"></script>

@@ -1,3 +1,63 @@
+
+body{
+
+    font-family: 'Poppins', sans-serif;
+}
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+#searchTitle{
+margin-right: 1em;
+}
+
+.dropdown_button {
+    background-color: #E0A000;
+    color: white;
+    padding:  0.25em 1em;
+    border-radius: .3em;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 10em;
+    border: 1px solid #ffffff;
+}
+
+.courses {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width: 10em;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.courses li {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    list-style: none;
+    background-color: #00999D;
+    border: 1px solid white;
+    border-radius: .3em;
+}
+
+.courses li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    /* padding: 10px; */
+}
+
+.courses li:hover {
+    background-color: #E0A000;
+    color: white;
+}
+
+
 #results {
     display: flex;
     flex-direction: column;
@@ -13,7 +73,7 @@ p {
 .official-card{
     display: flex;
     height: 75px;
-    width: 20em;
+    width: 30em;
     border: 1px solid black;
     margin-top: 6%;
 }
@@ -23,42 +83,8 @@ p {
     width: 100px;
 }
 
-.modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%;
-    overflow: auto; 
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
-  }
-  
-  /* Modal Content/Box */
-  .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; 
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; 
-  }
-  
-  /* The Close Button */
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
+
+
 
   #emailBtn{
     height: 50px;
@@ -67,4 +93,26 @@ p {
   #twitterBtn {
     height: 50px;
     width: 50px;
+  }
+
+  /*Search Bar*/
+  form {
+    width: 50%;
+    margin: 0;
+
+  }
+  #addressInput {
+    width: 40em;
+    height: 2em;
+  }
+
+  #searchButton {
+ 
+    background-color: #E0A000;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: .5em;
+    height: 2.5em;
+    width: 10em;
   }

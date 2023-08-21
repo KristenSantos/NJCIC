@@ -71,12 +71,16 @@ function displayCivicInfo(data) {
           : "No email provided from your local representative provided";
         const channel =
           official.channels && official.channels[1] ? official.channels[1] : {};
+          const phone = official.phones ? official.phones.join(", ") : "No phone number provided";
 
         officialsHTML += `
           <div class="official-card">
-          <img class="repPhoto" src="${photo}"/>
-            <p>${officialRole}: ${official.name}</p>
-
+          <div>
+            <strong><p>${official.name}</p></strong>
+            <p>${officialRole}</p>
+            </div>
+          <div id="number">
+          <div id="btncon>
             <a class="myBtn1" href="https://twitter.com/intent/tweet?text=@${channel.id} the rest of the message"
             data-size="large">
              <img id="twitterBtn" src="https://seeklogo.com/images/T/twitter-x-logo-19D2657BAA-seeklogo.com.png?v=638258862870000000" alt="Twitter Logo">
@@ -84,7 +88,9 @@ function displayCivicInfo(data) {
             <a class="myBtn2" href="mailto:${email}">
               <img id="emailBtn" src="https://freepngimg.com/thumb/gmail/64774-computer-gmail-email-icons-png-image-high-quality.png" alt="Email Icon">
             </a>
-
+          </div>
+          <p>Phone: ${phone}</p>
+          </div>
           </div>`;
       }
     }

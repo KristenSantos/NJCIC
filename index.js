@@ -60,11 +60,14 @@ function displayCivicInfo(data) {
     for (let i = 0; i < officials.length; i++) {
       if (officialIndices.includes(i)) {
         const official = officials[i];
-        const photo = official.photoUrl;
+        
+        if (official.name === "VACANT" || officialRole === "VACANT" ) {
+          continue; // Skip this iteration and move to the next official
+        }
 
-        "https://www.pngfind.com/pngs/m/676-6764065_default-profile-picture-transparent-hd-png-download.png"
-          ? official.photoUrl
-          : "https://www.pngfind.com/pngs/m/676-6764065_default-profile-picture-transparent-hd-png-download.png";
+        if(officialRole.includes("County")) {
+          continue;
+        }
 
         const email = official.emails
           ? official.emails.join(", ")
@@ -72,15 +75,17 @@ function displayCivicInfo(data) {
         const channel =
           official.channels && official.channels[1] ? official.channels[1] : {};
           const phone = official.phones ? official.phones.join(", ") : "No phone number provided";
-
+          const party = official.party ? official.party : "No party availiable"
+          
         officialsHTML += `
           <div class="official-card">
           <div>
             <strong><p>${official.name}</p></strong>
             <p>${officialRole}</p>
+            <p>${party}</p>
             </div>
           <div id="number">
-          <div id="btncon>
+          <div id="btncon">
             <a class="myBtn1" href="https://twitter.com/intent/tweet?text=@${channel.id} the rest of the message"
             data-size="large">
              <img id="twitterBtn" src="https://seeklogo.com/images/T/twitter-x-logo-19D2657BAA-seeklogo.com.png?v=638258862870000000" alt="Twitter Logo">
